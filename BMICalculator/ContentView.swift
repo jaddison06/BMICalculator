@@ -36,6 +36,7 @@ struct ContentView: View {
                 .keyboardType(.decimalPad)
             Spacer()
             Text(bmiString)
+                .multilineTextAlignment(.center)
             Spacer()
             Button("Calculate BMI!", action: {
                 if let dWeight = Double(weight), let dHeight = Double(height) {

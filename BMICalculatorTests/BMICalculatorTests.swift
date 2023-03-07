@@ -22,6 +22,9 @@ class BMICalculatorTests: XCTestCase {
             XCTAssertEqual(actual, testCase.expected)
         }
         
+        // imperial measurements test taken from example on CDC site
+        XCTAssertEqual(calculator.calculateBmi(weight: 37.25, height: 41.5, inputIsImperial: true), 15.2)
+        
     }
     
     func testLookupBmiClassification() throws {
