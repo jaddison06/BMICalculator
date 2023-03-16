@@ -10,15 +10,15 @@ import Foundation
 
 class BMICalculations {
     func calculateBmi(weight: Double, height: Double, inputIsImperial: Bool = false) -> Double {
-        let heightMul, weightMul: Double
+        let heightMultipler, weightMultipler: Double
         if (inputIsImperial) {
-            heightMul = 2.54
-            weightMul = 0.453592
+            heightMultiplier = 2.54
+            weightMultipler = 0.453592
         } else {
-            heightMul = 1
-            weightMul = 1
+            heightMultiplier = 1
+            weightMultiplier = 1
         }
-        return ((weight * weightMul) / pow((height * heightMul), 2) * 10000).rounded(toPlaces: 1)
+        return ((weight * weightMultiplier) / pow((height * heightMultiplier), 2) * 10000).rounded(toPlaces: 1)
     }
     
     func lookUpBmiClassification(bmi: Double) -> String {
@@ -31,6 +31,6 @@ class BMICalculations {
     func getUserFacingBmiString(weight: Double, height: Double, inputIsImperial: Bool) -> String {
         let bmi = calculateBmi(weight: weight, height: height, inputIsImperial: inputIsImperial)
         let classification = lookUpBmiClassification(bmi: bmi)
-        return "Your BMI is: \(bmi)\nYou are \(classification)"
+        return "Your BMI is: \(bmi)\nYou are classified as \(classification)"
     }
 }
